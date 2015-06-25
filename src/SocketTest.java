@@ -15,7 +15,7 @@ public class SocketTest {
         in.readLine();
         in.read();
         in.read();
-        out.println("taglist.xml\r");
+        out.println("tagcount.xml\r");
         String str = "";
         while((str = in.readLine()) != null)
         {
