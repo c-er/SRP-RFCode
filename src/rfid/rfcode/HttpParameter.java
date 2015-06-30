@@ -28,8 +28,7 @@ public class HttpParameter {
         this.paramValue = paramValue;
     }
 
-    public String toString()
-    {
+    public String toString() {
         return "&" + paramName + "=" + paramValue;
     }
 }

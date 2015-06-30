@@ -7,5 +7,11 @@ import java.util.ArrayList;
  */
 public class Tag {
     private String ID;
-    private String group;
+    private String tagid;
+    private String taggroupid;
+    private String tagtype;
+    private boolean lowbattery;
+    private int motioncount;
+    private boolean motion;
+    private ArrayList<TagLink> taglinks;
 }
