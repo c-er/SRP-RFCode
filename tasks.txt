@@ -23,3 +23,11 @@ IDE KNOWLEDGE
 SOURCE CODE CONTROL
 
 UNIT AND INTEGRATION TESTING
+
+
+classes that we need to make:
+
+Tag - Uday
+Reader - Arjun
+Channel - Sid
+Taglink - Vivek
