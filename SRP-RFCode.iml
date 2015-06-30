@@ -10,11 +10,11 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../JSON-java/JSON-java.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/JSON-java.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../JSON-java/JSON-java.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/JSON-java.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
