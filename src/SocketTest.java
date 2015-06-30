@@ -8,7 +8,7 @@ import java.net.Socket;
  * Created by uday on 6/25/15.
  */
 public class SocketTest {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         
         Socket sock = new Socket("10.11.34.186", 6501);
         PrintWriter out = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()), true);
