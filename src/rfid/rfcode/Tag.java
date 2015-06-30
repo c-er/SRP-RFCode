@@ -14,4 +14,14 @@ public class Tag {
     private int motioncount;
     private boolean motion;
     private ArrayList<TagLink> taglinks;
+
+    public Tag(String id, String tagid, String taggroupid, String tagtype, boolean lowbattery, int motioncount, boolean motion) {
+        this.id = id;
+        this.tagid = tagid;
+        this.taggroupid = taggroupid;
+        this.tagtype = tagtype;
+        this.lowbattery = lowbattery;
+        this.motioncount = motioncount;
+        this.motion = motion;
+    }
 }

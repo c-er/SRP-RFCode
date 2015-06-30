@@ -7,6 +7,12 @@ import java.util.ArrayList;
  */
 public class Channel {
     private Reader reader;
-    private String ID;
+    private String id;
     private ArrayList<TagLink> taglinks;
+
+    public Channel(Reader reader, String id) {
+        this.reader = reader;
+        this.id = id;
+    }
+
 }

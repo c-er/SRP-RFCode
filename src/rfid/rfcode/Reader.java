@@ -7,7 +7,9 @@ import java.util.ArrayList;
  */
 public class Reader {
     private String id;
+    private String type;
     private String connectionState;
+    private String hostname;
     private Channel channelA;
     private Channel channelB;
 }

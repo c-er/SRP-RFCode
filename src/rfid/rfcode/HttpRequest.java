@@ -1,8 +1,11 @@
 package rfid.rfcode;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import org.json.*;
@@ -17,7 +20,7 @@ public class HttpRequest {
     private final String PORT = "6580";
     private final String PATH = "/rfcode_zonemgr/zonemgr/api/";
 
-    public String execute() throws Exception
+    public String execute() throws IOException, MalformedURLException, ProtocolException
     {
         String url = "http://" + host + ":" + PORT + PATH + command + "?";
 
@@ -58,6 +61,12 @@ public class HttpRequest {
 
     public HttpRequest(ArrayList<HttpParameter> params, String command, String host) {
         this.params = params;
+        this.command = command;
+        this.host = host;
+    }
+
+    public HttpRequest(String command, String host) {
+        this.params = new ArrayList<HttpParameter>();
         this.command = command;
         this.host = host;
     }

@@ -1,3 +1,5 @@
+import jdk.nashorn.internal.runtime.JSONFunctions;
+import org.json.JSONObject;
 import rfid.rfcode.HttpParameter;
 import rfid.rfcode.HttpRequest;
 
@@ -11,9 +13,9 @@ public class HttpTest {
     public static void main(String args[]) throws Exception
     {
         ArrayList<HttpParameter> arr = new ArrayList<HttpParameter>();
-        arr.add(new HttpParameter("tagid0", "RFCMII00002408"));
-        arr.add(new HttpParameter("tagid1", "RFCMII00028876"));
-        System.out.println(new HttpRequest(arr, "tagprint.json", "10.11.34.186").execute());
+        arr.add(new HttpParameter("channelid0", "ARISTOTLE_channel_A"));
+        JSONObject json = new JSONObject(new HttpRequest(arr, "taglistbychannel.json", "10.11.34.186").execute());
+        for(String s : JSONObject.getNames(json)) System.out.println(s);
     }
 
     //private static String doCommand
