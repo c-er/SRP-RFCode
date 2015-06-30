@@ -8,5 +8,5 @@ import java.util.ArrayList;
 public class Channel {
     private Reader reader;
     private String ID;
-    private ArrayList<Tag> tags;
+    private ArrayList<TagLink> taglinks;
 }
