@@ -5,7 +5,7 @@ package rfid.rfcode;
  */
 
 public class TagLink {
-    private String tagid;
-    private String channelid;
+    private Tag tag;
+    private Channel channel;
     private int ssi;
 }

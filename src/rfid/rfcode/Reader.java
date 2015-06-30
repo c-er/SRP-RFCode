@@ -9,4 +9,6 @@ public class Reader {
     private String ID;
     private String connectionState;
     private ArrayList<Tag> tagsConnected;
+    private Channel channelA;
+    private Channel channelB;
 }
