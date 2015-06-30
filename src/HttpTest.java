@@ -1,3 +1,6 @@
+import rfid.rfcode.HttpParameter;
+import rfid.rfcode.HttpRequest;
+
 import java.util.ArrayList;
 
 /**

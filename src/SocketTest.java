@@ -1,14 +1,11 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 /**
  * Created by uday on 6/25/15.
  */
 public class SocketTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
         Socket sock = new Socket("10.11.34.186", 6501);
         PrintWriter out = new PrintWriter(new OutputStreamWriter(sock.getOutputStream()), true);
