@@ -13,7 +13,7 @@ public class HttpTest {
         ArrayList<HttpParameter> arr = new ArrayList<HttpParameter>();
         arr.add(new HttpParameter("tagid0", "RFCMII00002408"));
         arr.add(new HttpParameter("tagid1", "RFCMII00028876"));
-        System.out.println(new HttpRequest(arr, "tagprint.xml", "10.11.34.186").execute());
+        System.out.println(new HttpRequest(arr, "tagprint.json", "10.11.34.186").execute());
     }
 
     //private static String doCommand
