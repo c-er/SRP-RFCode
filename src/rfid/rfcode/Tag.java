@@ -68,8 +68,7 @@ public class Tag implements Comparable<Tag> {
     public ArrayList<TagLink> getTaglinks() {
         return taglinks;
     }
-
-    @Override
+    
     public String toString() {
         return "Tag{" +
                 "id='" + id + '\'' +

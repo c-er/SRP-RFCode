@@ -16,14 +16,34 @@ public class HttpRequest {
     private ArrayList<HttpParameter> params;
     private String command;
     private String host;
-    private final String PATH = "/rfcode_zonemgr/zonemgr/api/";
 
-    public String execute() throws IOException, MalformedURLException, ProtocolException
-    {
-        String url = "http://" + host + ":" + Constants.httpport + PATH + command + "?";
+    // constuctors
+    /*
+        Used to form the URL which outputs a string in 3 possible formats
+     */
+    public HttpRequest(ArrayList<HttpParameter> params, String command, String host) {
+        this.params = params;
+        this.command = command;
+        this.host = host;
+    }
 
-        for(HttpParameter p : params)
-        {
+    public HttpRequest(String command, String host) {
+        this.params = new ArrayList<HttpParameter>();
+        this.command = command;
+        this.host = host;
+    }
+
+    /**
+     * @return the response by the server when passing in a command specified by instance variable "command"
+     * and passing in params if necessary with the ArrayList instance variable
+     * @throws IOException
+     * @throws MalformedURLException    is thrown if argument to URL constructor is null
+     * @throws ProtocolException
+     */
+    public String execute() throws IOException, MalformedURLException, ProtocolException {
+        String url = "http://" + host + ":" + Constants.httpport + Constants.path + command + "?";
+
+        for(HttpParameter p : params) {
             url += p.toString();
         }
 
@@ -49,7 +69,7 @@ public class HttpRequest {
         String inputLine;
         StringBuffer response = new StringBuffer();
 
-        while ((inputLine = in.readLine()) != null) {
+        while((inputLine = in.readLine()) != null) {
             response.append(inputLine + "\n");
         }
         in.close();
@@ -57,26 +77,7 @@ public class HttpRequest {
         return response.toString();
     }
 
-    public HttpRequest(ArrayList<HttpParameter> params, String command, String host) {
-        this.params = params;
-        this.command = command;
-        this.host = host;
-    }
-
-    public HttpRequest(String command, String host) {
-        this.params = new ArrayList<HttpParameter>();
-        this.command = command;
-        this.host = host;
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
+    // getters and setters
     public String getCommand() {
         return command;
     }
@@ -91,5 +92,13 @@ public class HttpRequest {
 
     public void setParams(ArrayList<HttpParameter> params) {
         this.params = params;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
     }
 }

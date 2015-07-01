@@ -16,6 +16,10 @@ public class Reader implements Comparable<Reader> {
     private Channel channelA;
     private Channel channelB;
 
+    /**
+     * Constructs the Reader object.
+     * @param json The JSON object to be parsed to initialize the instance variables.
+     */
     public Reader(JSONObject json) {
         this.id = json.getString("id");
         JSONObject attr = json.getJSONObject("attributes");
