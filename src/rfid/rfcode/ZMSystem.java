@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by sid on 7/1/15.
+ * Class ZMSystem is a singleton that maintains ArrayLists of readers and tags through which all components
+ * of the RFID hardware can be accessed.
  */
 public class ZMSystem {
     private static ZMSystem ourInstance = new ZMSystem();
@@ -24,7 +25,7 @@ public class ZMSystem {
     }
 
     /**
-     * @throws IOException, MalformedURLException, ProtocolException    -- see HttpRequest.execute()
+     * Updates all Tags, Readers, Channels, and TagLinks to the most recently available data.
      */
     public void update() {
         readers.clear();
@@ -61,8 +62,10 @@ public class ZMSystem {
     }
 
     /**
+     * Gets the Channel object that corresponds to the ID passed.
      * @param id of the Reader of the channel to return
      * @return the Channel object corresponding to the id passed in
+     * @see rfid.rfcode.Channel
      */
     public Channel getChannelById(String id) {
         for(Reader r : readers) {
@@ -77,8 +80,10 @@ public class ZMSystem {
     }
 
     /**
+     * Gets the Reader object that corresponds to the ID passed.
      * @param id of the reader to return
      * @return the Reader object corresponding to the id passed in
+     * @see rfid.rfcode.Reader
      */
     public Reader getReaderById(String id) {
         for(Reader r : readers) {
@@ -90,8 +95,10 @@ public class ZMSystem {
     }
 
     /**
+     * Gets the Tag object corresponding to the ID passed.
      * @param id of the tag to return
      * @return the Tag object corresponding to the tagID passed in
+     * @see rfid.rfcode.Tag
      */
     public Tag getTagById(String id) {
         for(Tag t : tags) {
@@ -103,9 +110,11 @@ public class ZMSystem {
     }
 
     /**
-     * @param tagid and channelid are passed in together. The link between the tag and channel is known as
-     *          a TagLink...
+     * Gets the TagLink that connects the Tag and Channel with the given tag ID and channel ID.
+     * @param tagid the ID of the tag
+     * @param channelid the ID of the channel
      * @return the TagLink object that corresponds to the tagid and channelid is returned.
+     * @see rfid.rfcode.TagLink
      */
     public TagLink getTaglinkById(String tagid, String channelid) {
         for(TagLink tl : getTagById(tagid).getTaglinks()) {
@@ -117,8 +126,23 @@ public class ZMSystem {
     }
 
     // getters
+
+    /**
+     * Returns the current list of Readers.
+     * @return an ArrayList of Readers, filled with data as of the most recent call of update()
+     */
     public ArrayList<Reader> getReaders() { return readers; }
+
+    /**
+     * Returns the current list of Tags.
+     * @return an ArrayList of Tags, filled with data as of the most recent call of update()
+     */
     public ArrayList<Tag> getTags() { return tags; }
+
+    /**
+     * Returns the instance of this singleton class.
+     * @return the single ZMSystem instance
+     */
     public static ZMSystem getInstance() { return ourInstance; }
 
 }
