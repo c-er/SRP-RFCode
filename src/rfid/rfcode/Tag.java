@@ -79,7 +79,7 @@ public class Tag {
                 ", lowbattery=" + lowbattery +
                 ", motioncount=" + motioncount +
                 ", motion=" + motion +
-                ", taglinks=" + taglinks +
+                ", taglinks=" + taglinks.size() +
                 '}';
     }
 }

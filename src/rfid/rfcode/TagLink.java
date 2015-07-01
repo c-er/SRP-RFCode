@@ -30,8 +30,8 @@ public class TagLink {
     @Override
     public String toString() {
         return "TagLink{" +
-                "tag=" + tag +
-                ", channel=" + channel +
+                "tag=" + tag.getId() +
+                ", channel=" + channel.getId() +
                 ", ssi=" + ssi +
                 '}';
     }

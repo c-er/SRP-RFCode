@@ -31,9 +31,9 @@ public class Channel {
     @Override
     public String toString() {
         return "Channel{" +
-                "reader=" + reader +
+                "reader=" + reader.getId() +
                 ", id='" + id + '\'' +
-                ", taglinks=" + taglinks +
+                ", taglinks=" + taglinks.size() +
                 '}';
     }
 }

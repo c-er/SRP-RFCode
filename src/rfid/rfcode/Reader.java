@@ -22,9 +22,9 @@ public class Reader {
         this.type = attr.getString("type");
         this.connectionState = attr.getString("state");
         this.hostname = attr.getString("hostname");
-        JSONArray channels = json.getJSONArray("channels");
+        JSONArray channels = attr.getJSONArray("channels");
         channelA = new Channel(this, channels.getString(0));
-        channelA = new Channel(this, channels.getString(1));
+        channelB = new Channel(this, channels.getString(1));
     }
 
     public String getId() {
@@ -58,8 +58,8 @@ public class Reader {
                 ", type='" + type + '\'' +
                 ", connectionState='" + connectionState + '\'' +
                 ", hostname='" + hostname + '\'' +
-                ", channelA=" + channelA +
-                ", channelB=" + channelB +
+                ", channelA=" + channelA.getId() +
+                ", channelB=" + channelB.getId() +
                 '}';
     }
 }
