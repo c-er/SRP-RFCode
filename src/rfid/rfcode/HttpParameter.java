@@ -3,32 +3,61 @@ package rfid.rfcode;
 /**
  * Created by ushankar on 6/25/2015.
  */
+
+/**
+ * Represents an HTTP parameter to be passed in an HTTP request.
+ */
 public class HttpParameter {
     private String paramName;
     private String paramValue;
 
     /**
-     * @param paramName     name of the paramater  --  example: id,     tagid0
-     * @param paramValue    value of said parameter -- example: EUCLID, RFCMII00001234
+     * Constructs the HttpParameter object.
+     * @param paramName name of the paramater
+     * @param paramValue value of said parameter
      */
     public HttpParameter(String paramName, String paramValue) {
         this.paramName = paramName;
         this.paramValue = paramValue;
     }
 
-    // getters and setters
-    public String getParamName() { return paramName; }
+    /**
+     * Returns the name of the HTTP parameter.
+     * @return the name of the parameter
+     */
+    public String getParamName() {
+        return paramName;
+    }
+
+    /**
+     * Sets the name of the HTTP parameter.
+     * @param paramName the name of the parameter
+     */
     public void setParamName(String paramName) {
         this.paramName = paramName;
     }
+
+    /**
+     * Returns the value of the HTTP parameter
+     * @return the value of the parameter
+     */
     public String getParamValue() {
         return paramValue;
     }
-    public void setParamValue(String paramValue) { this.paramValue = paramValue; }
 
     /**
-     * @return returns the parameters a command takes. Used in the for-each loop in HttpRequest.execute()
+     * Sets the value of the HTTP parameter
+     * @param paramValue the value of the parameter
      */
+    public void setParamValue(String paramValue) {
+        this.paramValue = paramValue;
+    }
+
+    /**
+     * Returns a string that represents the object.
+     * @return the string containing data representing the HTTP parameter
+     */
+    @Override
     public String toString() {
         return "&" + paramName + "=" + paramValue;
     }

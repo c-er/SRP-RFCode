@@ -12,21 +12,32 @@ import java.util.ArrayList;
 /**
  * Created by ushankar on 6/25/2015.
  */
+
+/**
+ * Represents an HTTP request to be used to access the Zone Manager API.
+ */
 public class HttpRequest {
     private ArrayList<HttpParameter> params;
     private String command;
     private String host;
 
-    // constuctors
-    /*
-        Used to form the URL which outputs a string in 3 possible formats
+    /**
+     * Constructs the HTTPRequest object.
+     * @param params contains the parameters to be passed
+     * @param command contains the command to be executed
+     * @param host the hostname (IP address) of the target server
+     * @see rfid.rfcode.HttpParameter
      */
     public HttpRequest(ArrayList<HttpParameter> params, String command, String host) {
         this.params = params;
         this.command = command;
         this.host = host;
     }
-
+    /**
+     * Constructs the HTTPRequest object without parameters.
+     * @param command contains the command to be executed
+     * @param host the hostname (IP address) of the target server
+     */
     public HttpRequest(String command, String host) {
         this.params = new ArrayList<HttpParameter>();
         this.command = command;
@@ -34,11 +45,11 @@ public class HttpRequest {
     }
 
     /**
-     * @return the response by the server when passing in a command specified by instance variable "command"
-     * and passing in params if necessary with the ArrayList instance variable
-     * @throws IOException
-     * @throws MalformedURLException    is thrown if argument to URL constructor is null
-     * @throws ProtocolException
+     * Executes this HTTP request.
+     * @return the response by the server
+     * @throws IOException is thrown when a connection cannot be opened
+     * @throws MalformedURLException is thrown when the URL is invalid
+     * @throws ProtocolException is thrown when there is a connection protocol error
      */
     public String execute() throws IOException, MalformedURLException, ProtocolException {
         String url = "http://" + host + ":" + Constants.httpport + Constants.path + command + "?";
@@ -77,27 +88,50 @@ public class HttpRequest {
         return response.toString();
     }
 
-    // getters and setters
+    /**
+     * Returns the command that this HTTP request will execute.
+     * @return the command in question
+     */
     public String getCommand() {
         return command;
     }
 
+    /**
+     * Sets the command that this HTTP request will execute.
+     * @param command the value to set the command to
+     */
     public void setCommand(String command) {
         this.command = command;
     }
 
+    /**
+     * Returns the list of parameters that this HTTP request uses.
+     * @return an ArrayList of references to HttpParameter objects
+     */
     public ArrayList<HttpParameter> getParams() {
         return params;
     }
 
+    /**
+     * Sets the list of parameters that this HTTP request uses.
+     * @param params an ArrayList of HttpParameter objects
+     */
     public void setParams(ArrayList<HttpParameter> params) {
         this.params = params;
     }
 
+    /**
+     * Returns the hostname of the server this HTTP request targets.
+     * @return the hostname (IP address) of the target server
+     */
     public String getHost() {
         return host;
     }
 
+    /**
+     * Sets the hostname of the server this HTTP request will target.
+     * @param host the hostname (IP address) of the target server
+     */
     public void setHost(String host) {
         this.host = host;
     }
