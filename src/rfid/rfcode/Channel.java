@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by sid on 6/30/15.
  */
-public class Channel {
+public class Channel implements Comparable<Channel> {
     private Reader reader;
     private String id;
     private ArrayList<TagLink> taglinks;
@@ -35,5 +35,9 @@ public class Channel {
                 ", id='" + id + '\'' +
                 ", taglinks=" + taglinks.size() +
                 '}';
+    }
+
+    public int compareTo(Channel c){
+        return this.getId().compareTo(c.getId());
     }
 }

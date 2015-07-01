@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by sid on 6/30/15.
  */
-public class Reader {
+public class Reader implements Comparable<Reader> {
     private String id;
     private String type;
     private String connectionState;
@@ -62,4 +62,9 @@ public class Reader {
                 ", channelB=" + channelB.getId() +
                 '}';
     }
+
+    public int compareTo(Reader r) {
+        return this.getId().compareTo(r.getId());
+    }
+
 }
