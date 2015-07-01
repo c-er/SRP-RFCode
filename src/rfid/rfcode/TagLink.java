@@ -14,4 +14,16 @@ public class TagLink {
         this.channel = channel;
         this.ssi = ssi;
     }
+
+    public Tag getTag() {
+        return tag;
+    }
+
+    public Channel getChannel() {
+        return channel;
+    }
+
+    public int getSsi() {
+        return ssi;
+    }
 }

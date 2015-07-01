@@ -13,6 +13,18 @@ public class Channel {
     public Channel(Reader reader, String id) {
         this.reader = reader;
         this.id = id;
+        this.taglinks = new ArrayList<TagLink>();
     }
 
+    public Reader getReader() {
+        return reader;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public ArrayList<TagLink> getTaglinks() {
+        return taglinks;
+    }
 }
