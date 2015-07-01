@@ -3,7 +3,7 @@ package rfid.rfcode;
 /**
  * Holds important constants to be used between classes.
  */
-public class Constants {
+public abstract class Constants {
     /**
      * The hostname (IP address) of the computer running the Zone Manager software.
      */
