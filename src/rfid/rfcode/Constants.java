@@ -1,10 +1,6 @@
 package rfid.rfcode;
 
 /**
- * Created by uday on 6/30/15.
- */
-
-/**
  * Holds important constants to be used between classes.
  */
 public class Constants {

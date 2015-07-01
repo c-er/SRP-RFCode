@@ -1,1 +1,2 @@
-RFCode Software Subsystem - include everything we've ever done.
+# Zone Manager Java API
+RFCode Software Subsystem

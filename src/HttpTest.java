@@ -5,9 +5,6 @@ import rfid.rfcode.HttpRequest;
 
 import java.util.ArrayList;
 
-/**
- * Created by ushankar on 6/25/2015.
- */
 public class HttpTest {
 
     public static void main(String args[]) throws Exception

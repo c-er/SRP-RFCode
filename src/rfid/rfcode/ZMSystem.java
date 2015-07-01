@@ -7,8 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Class ZMSystem is a singleton that maintains ArrayLists of readers and tags through which all components
- * of the RFID hardware can be accessed.
+ * Maintains ArrayLists of readers and tags through which all components of the RFID hardware can be accessed. It is a singleton.
  */
 public class ZMSystem {
     private static ZMSystem ourInstance = new ZMSystem();
@@ -16,7 +15,7 @@ public class ZMSystem {
     private ArrayList<Tag> tags;
 
     /*
-        Constructor is private to avoid multiple constructions of the same object (Singleton pattern)
+     * Constructor is private to avoid multiple constructions of the same object (Singleton pattern)
      */
     private ZMSystem() {
         readers = new ArrayList<Reader>();

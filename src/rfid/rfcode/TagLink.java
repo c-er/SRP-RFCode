@@ -1,10 +1,6 @@
 package rfid.rfcode;
 
 /**
- * Created by sid on 6/30/15.
- */
-
-/**
  * Represents an open connection between a Tag object and a Channel object.
  */
 public class TagLink implements Comparable<TagLink> {

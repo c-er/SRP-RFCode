@@ -3,10 +3,6 @@ package rfid.rfcode;
 import java.util.ArrayList;
 
 /**
- * Created by sid on 6/30/15.
- */
-
-/**
  * Represents the Channel objects that each reader has.
  */
 public class Channel implements Comparable<Channel> {

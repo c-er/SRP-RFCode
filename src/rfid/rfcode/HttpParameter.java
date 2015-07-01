@@ -1,10 +1,6 @@
 package rfid.rfcode;
 
 /**
- * Created by ushankar on 6/25/2015.
- */
-
-/**
  * Represents an HTTP parameter to be passed in an HTTP request.
  */
 public class HttpParameter {

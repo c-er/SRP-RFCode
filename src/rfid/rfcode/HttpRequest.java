@@ -10,10 +10,6 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Created by ushankar on 6/25/2015.
- */
-
-/**
  * Represents an HTTP request to be used to access the Zone Manager API.
  */
 public class HttpRequest {

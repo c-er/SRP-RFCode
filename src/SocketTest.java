@@ -1,9 +1,6 @@
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created by uday on 6/25/15.
- */
 public class SocketTest {
     public static void main(String[] args) throws Exception {
         

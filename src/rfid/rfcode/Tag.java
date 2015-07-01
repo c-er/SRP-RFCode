@@ -6,10 +6,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 /**
- * Created by sid on 6/30/15.
- */
-
-/**
  * Represents physical Tag objects.
  */
 public class Tag implements Comparable<Tag> {

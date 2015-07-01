@@ -6,10 +6,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 /**
- * Created by sid on 6/30/15.
- */
-
-/**
  * Represents physical Reader objects.
  */
 public class Reader implements Comparable<Reader> {

@@ -1,8 +1,5 @@
 package rfid.rfcode;
 
-/**
- * Created by ushankar on 7/1/2015.
- */
 public class ZMSystemTest {
     public static void main(String args[])
     {
