@@ -9,7 +9,7 @@ public class HttpParameter {
 
     /**
      * Constructs the HttpParameter object.
-     * @param paramName name of the paramater
+     * @param paramName name of the parameter
      * @param paramValue value of said parameter
      */
     public HttpParameter(String paramName, String paramValue) {
@@ -34,7 +34,7 @@ public class HttpParameter {
     }
 
     /**
-     * Returns the value of the HTTP parameter
+     * Returns the value of the HTTP parameterA.
      * @return the value of the parameter
      */
     public String getParamValue() {
