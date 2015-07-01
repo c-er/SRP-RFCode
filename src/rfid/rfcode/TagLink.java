@@ -4,7 +4,7 @@ package rfid.rfcode;
  * Created by sid on 6/30/15.
  */
 
-public class TagLink {
+public class TagLink implements Comparable<TagLink> {
     private Tag tag;
     private Channel channel;
     private int ssi;
@@ -34,5 +34,10 @@ public class TagLink {
                 ", channel=" + channel.getId() +
                 ", ssi=" + ssi +
                 '}';
+    }
+
+    public int compareTo(TagLink tl)
+    {
+        return this.getTag().getId().compareTo(tl.getTag().getId()) != 0 ? this.getTag().getId().compareTo(tl.getTag().getId()) : this.getChannel().getId().compareTo(tl.getChannel().getId());
     }
 }

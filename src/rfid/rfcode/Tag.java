@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by sid on 6/30/15.
  */
-public class Tag {
+public class Tag implements Comparable<Tag> {
     private String id;
     private String tagid;
     private String taggroupid;
@@ -81,5 +81,10 @@ public class Tag {
                 ", motion=" + motion +
                 ", taglinks=" + taglinks.size() +
                 '}';
+    }
+
+    public int compareTo(Tag t)
+    {
+        return this.getId().compareTo(t.getId());
     }
 }
