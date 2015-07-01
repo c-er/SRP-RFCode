@@ -51,4 +51,15 @@ public class Reader {
         return channelB;
     }
 
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "id='" + id + '\'' +
+                ", type='" + type + '\'' +
+                ", connectionState='" + connectionState + '\'' +
+                ", hostname='" + hostname + '\'' +
+                ", channelA=" + channelA +
+                ", channelB=" + channelB +
+                '}';
+    }
 }

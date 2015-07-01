@@ -68,4 +68,18 @@ public class Tag {
     public ArrayList<TagLink> getTaglinks() {
         return taglinks;
     }
+
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "id='" + id + '\'' +
+                ", tagid='" + tagid + '\'' +
+                ", taggroupid='" + taggroupid + '\'' +
+                ", tagtype='" + tagtype + '\'' +
+                ", lowbattery=" + lowbattery +
+                ", motioncount=" + motioncount +
+                ", motion=" + motion +
+                ", taglinks=" + taglinks +
+                '}';
+    }
 }

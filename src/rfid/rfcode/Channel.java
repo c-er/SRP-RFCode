@@ -27,4 +27,13 @@ public class Channel {
     public ArrayList<TagLink> getTaglinks() {
         return taglinks;
     }
+
+    @Override
+    public String toString() {
+        return "Channel{" +
+                "reader=" + reader +
+                ", id='" + id + '\'' +
+                ", taglinks=" + taglinks +
+                '}';
+    }
 }

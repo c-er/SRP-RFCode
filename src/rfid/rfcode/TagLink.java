@@ -26,4 +26,13 @@ public class TagLink {
     public int getSsi() {
         return ssi;
     }
+
+    @Override
+    public String toString() {
+        return "TagLink{" +
+                "tag=" + tag +
+                ", channel=" + channel +
+                ", ssi=" + ssi +
+                '}';
+    }
 }

@@ -95,4 +95,12 @@ public class ZMSystem {
         }
         return null;
     }
+
+    public ArrayList<Reader> getReaders() {
+        return readers;
+    }
+
+    public ArrayList<Tag> getTags() {
+        return tags;
+    }
 }
