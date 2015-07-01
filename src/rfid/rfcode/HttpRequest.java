@@ -8,7 +8,6 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
-import org.json.*;
 
 /**
  * Created by ushankar on 6/25/2015.
@@ -17,12 +16,11 @@ public class HttpRequest {
     private ArrayList<HttpParameter> params;
     private String command;
     private String host;
-    private final String PORT = "6580";
     private final String PATH = "/rfcode_zonemgr/zonemgr/api/";
 
     public String execute() throws IOException, MalformedURLException, ProtocolException
     {
-        String url = "http://" + host + ":" + PORT + PATH + command + "?";
+        String url = "http://" + host + ":" + Constants.httpport + PATH + command + "?";
 
         for(HttpParameter p : params)
         {

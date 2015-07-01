@@ -28,13 +28,13 @@ public class Tag {
         this.lowbattery = attr.getBoolean("lowbattery");
         this.motioncount = attr.getInt("motioncount");
         this.motion = attr.getBoolean("motion");
-        JSONArray arr = json.getJSONArray("taglinks");
+        /*JSONArray arr = json.getJSONArray("taglinks");
         for(int i = 0; i < arr.length(); i++)
         {
             JSONObject obj = arr.getJSONObject(i);
             TagLink tl = new TagLink(this, null, obj.getInt("ssi"));
             taglinks.add(tl);
-        }
+        }*/
     }
 
     public String getId() {

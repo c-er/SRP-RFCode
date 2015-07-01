@@ -5,4 +5,5 @@ package rfid.rfcode;
  */
 public class Constants {
     public static String host = "10.11.34.186";
+    public static String httpport = "6580";
 }
