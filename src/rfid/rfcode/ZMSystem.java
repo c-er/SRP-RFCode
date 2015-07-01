@@ -18,6 +18,14 @@ public class ZMSystem {
     }
 
     private ZMSystem() {
+        readers = new ArrayList<Reader>();
+        tags = new ArrayList<Tag>();
+        update();
+    }
+
+    public void update() {
+        readers.clear();
+        tags.clear();
         JSONObject json = null;
 
         try{
