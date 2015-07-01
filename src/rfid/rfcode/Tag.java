@@ -1,5 +1,6 @@
 package rfid.rfcode;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class Tag {
     private ArrayList<TagLink> taglinks;
 
     public Tag(JSONObject json) {
+        taglinks = new ArrayList<TagLink>();
         this.id = json.getString("id");
         JSONObject attr = json.getJSONObject("attributes");
         this.tagid = attr.getString("tagid");
@@ -26,5 +28,44 @@ public class Tag {
         this.lowbattery = attr.getBoolean("lowbattery");
         this.motioncount = attr.getInt("motioncount");
         this.motion = attr.getBoolean("motion");
+        JSONArray arr = json.getJSONArray("taglinks");
+        for(int i = 0; i < arr.length(); i++)
+        {
+            JSONObject obj = arr.getJSONObject(i);
+            TagLink tl = new TagLink(this, null, obj.getInt("ssi"));
+            taglinks.add(tl);
+        }
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getTagid() {
+        return tagid;
+    }
+
+    public String getTaggroupid() {
+        return taggroupid;
+    }
+
+    public String getTagtype() {
+        return tagtype;
+    }
+
+    public boolean isLowbattery() {
+        return lowbattery;
+    }
+
+    public int getMotioncount() {
+        return motioncount;
+    }
+
+    public boolean isMotion() {
+        return motion;
+    }
+
+    public ArrayList<TagLink> getTaglinks() {
+        return taglinks;
     }
 }
