@@ -15,7 +15,7 @@ public final class Constants {
     /**
      * The base URL used to access the Zone Manager API.
      */
-    public static String path = "/rfcodezonemgr/zonemgr/api/";
+    public static String path = "/rfcode_zonemgr/zonemgr/api/";
 
     private Constants() {}
 }
