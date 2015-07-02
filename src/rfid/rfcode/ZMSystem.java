@@ -3,21 +3,22 @@ package rfid.rfcode;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Maintains ArrayLists of readers and tags through which all components of the RFID hardware can be accessed. It is a singleton.
+ * Maintains ArrayLists of readers and tags through which all components of the RFID hardware can be accessed.
  */
 public class ZMSystem {
-    private static ZMSystem ourInstance = new ZMSystem();
     private ArrayList<Reader> readers;
     private ArrayList<Tag> tags;
 
-    /*
-     * Constructor is private to avoid multiple constructions of the same object (Singleton pattern)
+    /**
+     * Constructs the ZMSystem master object.
+     * @param host the hostname (IP address) of the computer running the Zone Manager server.
+     * @see rfid.rfcode.Constants
      */
-    private ZMSystem() {
+    public ZMSystem(String host) {
+        Constants.host = host;
         readers = new ArrayList<Reader>();
         tags = new ArrayList<Tag>();
         update();
@@ -25,6 +26,10 @@ public class ZMSystem {
 
     /**
      * Updates all Tags, Readers, Channels, and TagLinks to the most recently available data.
+     * @see rfid.rfcode.Channel
+     * @see rfid.rfcode.Tag
+     * @see rfid.rfcode.Reader
+     * @see rfid.rfcode.TagLink
      */
     public void update() {
         readers.clear();
@@ -124,24 +129,18 @@ public class ZMSystem {
         return null;
     }
 
-    // getters
-
     /**
      * Returns the current list of Readers.
      * @return an ArrayList of Readers, filled with data as of the most recent call of update()
+     * @see rfid.rfcode.Reader
      */
     public ArrayList<Reader> getReaders() { return readers; }
 
     /**
      * Returns the current list of Tags.
      * @return an ArrayList of Tags, filled with data as of the most recent call of update()
+     * @see rfid.rfcode.Tag
      */
     public ArrayList<Tag> getTags() { return tags; }
-
-    /**
-     * Returns the instance of this singleton class.
-     * @return the single ZMSystem instance
-     */
-    public static ZMSystem getInstance() { return ourInstance; }
 
 }

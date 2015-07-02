@@ -3,7 +3,7 @@ package rfid.rfcode;
 public class ZMSystemTest {
     public static void main(String args[])
     {
-        ZMSystem sys = ZMSystem.getInstance();
+        ZMSystem sys = new ZMSystem("10.11.34.186");
         while(true)
         {
             for(Tag t : sys.getTags())

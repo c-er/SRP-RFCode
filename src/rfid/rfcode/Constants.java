@@ -7,7 +7,7 @@ public final class Constants {
     /**
      * The hostname (IP address) of the computer running the Zone Manager software.
      */
-    public static String host = "10.11.34.186";
+    public static String host;
     /**
      * The port that the Zone Manager server listens to for HTTP requests.
      */
