@@ -11,7 +11,7 @@ The API, its source, and all its dependencies are contained in the jarfile [SRP_
 simply link the jarfile as an external library. Otherwise, just add the jar to the CLASSPATH.
 
 ## Documentation
-The documentation is located at [c-er.github.io/SRP-RFCode](c-er.github.io/SRP-RFCode). It is also contained in the jarfile [SRP_RFCode_doc.jar](https://github.com/c-er/SRP-RFCode/blob/master/SRP_RFCode_doc.jar) on the master branch.
+The documentation is located at [c-er.github.io/SRP-RFCode](http://c-er.github.io/SRP-RFCode). It is also contained in the jarfile [SRP_RFCode_doc.jar](https://github.com/c-er/SRP-RFCode/blob/master/SRP_RFCode_doc.jar) on the master branch.
 
 ## Credits
 This API depends on the [org.json](www.json.org/java/index.html) library to parse the JSON output of the raw HTTP commands sent to the Zone Manager server.
