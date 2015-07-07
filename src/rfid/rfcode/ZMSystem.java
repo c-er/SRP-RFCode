@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class ZMSystem {
     private ArrayList<Reader> readers;
     private ArrayList<Tag> tags;
+    private long timestamp;
 
     /**
      * Constructs the ZMSystem master object.
@@ -63,6 +64,7 @@ public class ZMSystem {
                 c.getTaglinks().add(tl);
             }
         }
+        this.timestamp = System.currentTimeMillis();
     }
 
     /**
@@ -143,4 +145,12 @@ public class ZMSystem {
      */
     public ArrayList<Tag> getTags() { return tags; }
 
+    /**
+     * Returns the unix timestamp of the latest update
+     * @return the unix timestamp that corresponds to the information stored in this object
+     */
+
+    public long getTimestamp() {
+        return timestamp;
+    }
 }

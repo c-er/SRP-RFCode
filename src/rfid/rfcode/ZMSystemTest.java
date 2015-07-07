@@ -29,6 +29,7 @@ public class ZMSystemTest {
                 }
             }
             System.out.printf("\nTagLinks found: %d\n\n", taglinkct);
+            System.out.println("Timestamp: " + sys.getTimestamp() + "\n");
             try {
                 Thread.sleep(1000);
             } catch (Exception e) {
