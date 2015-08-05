@@ -47,6 +47,7 @@ public class HttpRequest {
      * @throws MalformedURLException is thrown when the URL is invalid
      * @throws ProtocolException is thrown when there is a connection protocol error
      */
+    // @TODO add timeout on execute (throw an exception?)
     public String execute() throws IOException, MalformedURLException, ProtocolException {
         String url = "http://" + host + ":" + Constants.httpport + Constants.path + command + "?";
 

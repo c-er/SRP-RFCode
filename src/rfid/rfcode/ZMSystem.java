@@ -42,26 +42,28 @@ public class ZMSystem {
         } catch(Exception e) {
             e.printStackTrace();
         }
-        for(String readerid : JSONObject.getNames(json)) {
-            readers.add(new Reader(json.getJSONObject(readerid)));
+        if(JSONObject.getNames(json) != null) {
+            for (String readerid : JSONObject.getNames(json)) {
+                readers.add(new Reader(json.getJSONObject(readerid)));
+            }
         }
-
         try {
             json = new JSONObject(new HttpRequest("tagprintbygroup.json", Constants.host).execute());
         } catch(Exception e) {
             e.printStackTrace();
         }
-        for(String tagid : JSONObject.getNames(json)) {
-
-            Tag t = new Tag(json.getJSONObject(tagid));
-            tags.add(t);
-            JSONArray arr = json.getJSONObject(tagid).getJSONArray("taglinks");
-            for(int i = 0; i < arr.length(); i++) {
-                JSONObject obj = arr.getJSONObject(i);
-                Channel c = getChannelById(obj.getString("channelid"));
-                TagLink tl = new TagLink(t, c, obj.getInt("ssi"));
-                t.getTaglinks().add(tl);
-                c.getTaglinks().add(tl);
+        if(JSONObject.getNames(json) != null) {
+            for (String tagid : JSONObject.getNames(json)) {
+                Tag t = new Tag(json.getJSONObject(tagid));
+                tags.add(t);
+                JSONArray arr = json.getJSONObject(tagid).getJSONArray("taglinks");
+                for (int i = 0; i < arr.length(); i++) {
+                    JSONObject obj = arr.getJSONObject(i);
+                    Channel c = getChannelById(obj.getString("channelid"));
+                    TagLink tl = new TagLink(t, c, obj.getInt("ssi"));
+                    t.getTaglinks().add(tl);
+                    c.getTaglinks().add(tl);
+                }
             }
         }
         this.timestamp = System.currentTimeMillis();
@@ -146,8 +148,8 @@ public class ZMSystem {
     public ArrayList<Tag> getTags() { return tags; }
 
     /**
-     * Returns the unix timestamp of the latest update
-     * @return the unix timestamp that corresponds to the information stored in this object
+     * Returns the Unix timestamp of the latest update
+     * @return the Unix timestamp that corresponds to the information stored in this object
      */
 
     public long getTimestamp() {
